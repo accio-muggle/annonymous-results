@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+
+
+  <title>JEDi</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 32px;
+  }
+  
+  .row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+    -ms-flex: 50%; /* IE 10 */
+    flex: 50%;
+    padding: 0 4px;
+  }
+  
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <br>
+            <h2 class="subtitle is-3 publication-subtitle">Stable Video Diffusion Fine-Tuning Dynamics: JEDi vs FVD</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="hero is-small" style="font-family: 'Google Sans', sans-serif;">
+  <div class="hero-body">
+    <div class="container">
+
+      <p class="is-size-5 mb-5">
+        We evaluated FVD and JEDi video distribution distances across 5 training checkpoints while fine-tuning Stable Video Diffusion on the BDD dataset. JEDi tracks incremental gains in all checkpoints, whereas FVD detects monumental gains early. Visually, video quality continues to increase as fine-tuning progresses, but this is not observed when tracking performance using FVD.
+      </p>
+      <div class="columns is-centered mb-5">
+        <div class="column" style="max-width: 700px; text-align: center; position: relative;">
+          <img src="./static/images/ctrlv_fvd_vs_jedi.png" alt="Fine-tuning Progression" style="width: 100%; height: 400px; object-fit: contain;">
+          <p class="caption is-size-5"><b>Stable Video Diffusion Fine-Tuning Dynamics:</b> JEDi vs FVD</p>
+        </div>
+      </div>
+      <p class="is-size-5 mb-5">
+        For reference, we show sample videos from the BDD dataset at different fine-tuning iterations. The videos show the progression of the fine-tuning process, with the quality of the generated videos improving over time.
+      </p>
+      <div id="fvd_limitations" class="tabcontent">
+        <table>
+          <tr>
+            <td style="text-align: center"><b>Iteration 0</b></td>
+            <td style="text-align: center"><b>Iteration 1</b></td>
+            <td style="text-align: center"><b>Iteration 6</b></td>
+            <td style="text-align: center"><b>Iteration 1200</b></td>
+          </tr>
+          <tr></tr>
+            <td style="width:25%"><video id="iter0" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/iter0_0006.mov" type="video/mp4" /></video></td>
+            <td style="width:25%"><video id="iter1" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/iter1_0006.mov" type="video/mp4" /></video></td>
+                <td style="width:25%"><video id="iter6" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/iter6_0006.mov" type="video/mp4" /></video></td>
+                  <td style="width:25%"><video id="iter1200" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/iter1200_0006.mov" type="video/mp4" /></video></td>
+          </tr>
+          <tr>
+            <td style="width:25%"><video id="iter0" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/iter0_0050.mov" type="video/mp4" /></video></td>
+            <td style="width:25%"><video id="iter1" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/iter1_0050.mov" type="video/mp4" /></video></td>
+                <td style="width:25%"><video id="iter6" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/iter6_0050.mov" type="video/mp4" /></video></td>
+                  <td style="width:25%"><video id="iter1200" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/iter1200_0050.mov" type="video/mp4" /></video></td>
+          </tr>
+          <tr>
+            <td style="width:25%"><video id="iter0" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/iter0_0041.mov" type="video/mp4" /></video></td>
+            <td style="width:25%"><video id="iter1" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/iter1_0041.mov" type="video/mp4" /></video></td>
+                <td style="width:25%"><video id="iter6" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/iter6_0041.mov" type="video/mp4" /></video></td>
+                  <td style="width:25%"><video id="iter1200" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/iter1200_0041.mov" type="video/mp4" /></video></td>
+          </tr>
+        </table>
+    </div>
+</section> 
+
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
